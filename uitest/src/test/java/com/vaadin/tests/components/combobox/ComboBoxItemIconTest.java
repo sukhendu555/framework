@@ -6,8 +6,10 @@ import org.openqa.selenium.Keys;
 
 import com.vaadin.testbench.By;
 import com.vaadin.testbench.elements.ComboBoxElement;
+import com.vaadin.testbench.parallel.TestCategory;
 import com.vaadin.tests.tb3.MultiBrowserTest;
 
+@TestCategory("xvfb-test")
 public class ComboBoxItemIconTest extends MultiBrowserTest {
     @Test
     public void testIconsInComboBox() throws Exception {
