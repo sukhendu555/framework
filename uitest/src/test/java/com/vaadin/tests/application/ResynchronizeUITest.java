@@ -15,26 +15,14 @@
  */
 package com.vaadin.tests.application;
 
-import java.util.Collections;
-import java.util.List;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 import com.vaadin.testbench.elements.ButtonElement;
-import com.vaadin.testbench.parallel.Browser;
 import com.vaadin.tests.tb3.SingleBrowserTest;
 
 public class ResynchronizeUITest extends SingleBrowserTest {
-
-    @Override
-    public List<DesiredCapabilities> getBrowsersToTest() {
-        // PhantomJS does not send onload events for styles
-        return Collections
-                .singletonList(Browser.FIREFOX.getDesiredCapabilities());
-    }
 
     @Test
     public void ensureResynchronizeRecreatesDOM() {
