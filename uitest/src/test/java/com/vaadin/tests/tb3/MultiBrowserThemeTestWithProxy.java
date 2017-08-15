@@ -18,12 +18,10 @@ package com.vaadin.tests.tb3;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 @RunWith(ParameterizedTB3Runner.class)
 public abstract class MultiBrowserThemeTestWithProxy
@@ -53,10 +51,4 @@ public abstract class MultiBrowserThemeTestWithProxy
         super.openTestURL(uiClass, params.toArray(new String[params.size()]));
     }
 
-    @Override
-    public List<DesiredCapabilities> getBrowsersToTest() {
-        List<DesiredCapabilities> browsersToTest = getBrowsersExcludingPhantomJS();
-        browsersToTest.add(PHANTOMJS2());
-        return browsersToTest;
-    }
 }

@@ -19,9 +19,9 @@ import org.openqa.selenium.support.ui.Select;
 
 import com.vaadin.testbench.elements.AbstractComponentElement.ReadOnlyException;
 import com.vaadin.testbench.elements.ListSelectElement;
-import com.vaadin.tests.tb3.SingleBrowserTestPhantomJS2;
+import com.vaadin.tests.tb3.SingleBrowserTest;
 
-public class ListSelectTest extends SingleBrowserTestPhantomJS2 {
+public class ListSelectTest extends SingleBrowserTest {
     @Before
     public void setUp() throws Exception {
         openTestURL();
@@ -76,11 +76,13 @@ public class ListSelectTest extends SingleBrowserTestPhantomJS2 {
         selectItem("Item 4");
         Assert.assertEquals("1. Selected: [Item 4]", getLogRow(0));
 
-        getListSelect().findElement(By.tagName("select")).sendKeys(Keys.ARROW_UP);
+        getListSelect().findElement(By.tagName("select"))
+                .sendKeys(Keys.ARROW_UP);
 
         Assert.assertEquals("2. Selected: [Item 3]", getLogRow(0));
 
-        getListSelect().findElement(By.tagName("select")).sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN);
+        getListSelect().findElement(By.tagName("select"))
+                .sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN);
 
         Assert.assertEquals("4. Selected: [Item 5]", getLogRow(0));
 

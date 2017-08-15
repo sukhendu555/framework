@@ -7,9 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 
 import com.vaadin.testbench.elements.TreeGridElement;
-import com.vaadin.tests.tb3.SingleBrowserTestPhantomJS2;
+import com.vaadin.tests.tb3.SingleBrowserTest;
 
-public class TreeGridCollapseExpandTest extends SingleBrowserTestPhantomJS2 {
+public class TreeGridCollapseExpandTest extends SingleBrowserTest {
 
     private TreeGridElement grid;
 

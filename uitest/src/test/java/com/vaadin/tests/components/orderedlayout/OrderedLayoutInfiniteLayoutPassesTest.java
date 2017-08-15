@@ -39,7 +39,6 @@ public class OrderedLayoutInfiniteLayoutPassesTest extends MultiBrowserTest {
         List<DesiredCapabilities> b = super.getBrowsersToTest();
         // Chrome and PhantomJS do not support browser zoom changes
         b.remove(Browser.CHROME.getDesiredCapabilities());
-        b.remove(Browser.PHANTOMJS.getDesiredCapabilities());
         return b;
     }
 

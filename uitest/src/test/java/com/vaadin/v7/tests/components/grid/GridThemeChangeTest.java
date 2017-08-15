@@ -15,11 +15,8 @@
  */
 package com.vaadin.v7.tests.components.grid;
 
-import java.util.List;
-
 import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 import com.vaadin.testbench.elements.GridElement;
 import com.vaadin.testbench.parallel.TestCategory;
@@ -27,12 +24,6 @@ import com.vaadin.tests.tb3.MultiBrowserTest;
 
 @TestCategory("grid")
 public class GridThemeChangeTest extends MultiBrowserTest {
-    @Override
-    public List<DesiredCapabilities> getBrowsersToTest() {
-        // Seems like stylesheet onload is not fired on PhantomJS
-        // https://github.com/ariya/phantomjs/issues/12332
-        return super.getBrowsersExcludingPhantomJS();
-    }
 
     @Test
     public void testThemeChange() {
