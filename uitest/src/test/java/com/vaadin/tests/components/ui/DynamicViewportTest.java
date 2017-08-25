@@ -32,6 +32,6 @@ public class DynamicViewportTest extends SingleBrowserTest {
                 By.cssSelector("meta[name=viewport]"));
 
         Assert.assertTrue(
-                viewportElement.getAttribute("content").contains("PhantomJS"));
+                viewportElement.getAttribute("content").contains("Chrome"));
     }
 }
