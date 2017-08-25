@@ -29,10 +29,13 @@ public class GridLayoutAlignmentsTest extends MultiBrowserTest {
     private NativeButtonElement targetButton;
     private Point gridLayoutLocation;
 
-    private int middleY = 400 / 2 - 30 / 2;
+    private int middleY = 400 / 2;
     private int middleX = middleY;
-    private int bottomX = 400 - 30;
+    private int bottomX = 400;
     private int bottomY = bottomX;
+
+    private int buttonWidth = 30;
+    private int buttonHeight = 30;
 
     @Override
     protected boolean requireWindowFocusForIE() {
@@ -72,12 +75,12 @@ public class GridLayoutAlignmentsTest extends MultiBrowserTest {
 
     private void assertOffset(int x, int y) {
         Point location = targetButton.getLocation();
-        int offsetX = location.x - gridLayoutLocation.x;
-        int offsetY = location.y - gridLayoutLocation.y;
+        int offsetX = location.x - gridLayoutLocation.x + buttonWidth / 2;
+        int offsetY = location.y - gridLayoutLocation.y + buttonHeight / 2;
 
-        // Border: 1px
-        x++;
-        y++;
+        // Border: 2px
+        x += 2;
+        y += 2;
 
         Assert.assertEquals("X offset incorrect", x, offsetX);
         Assert.assertEquals("Y offset incorrect", y, offsetY);
