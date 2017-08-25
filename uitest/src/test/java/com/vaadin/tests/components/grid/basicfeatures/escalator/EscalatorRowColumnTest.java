@@ -19,7 +19,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -161,8 +160,8 @@ public class EscalatorRowColumnTest extends EscalatorBasicClientFeaturesTest {
         scrollVerticallyTo(2000); // more like 1857, but this should be enough.
 
         // if not found, an exception is thrown here
-        assertTrue("Wanted cell was not visible",
-                isElementPresent(By.xpath("//td[text()='Cell: 9,99']")));
+        waitUntil(driver -> isElementPresent(
+                By.xpath("//td[text()='Cell: 9,99']")));
     }
 
     @Test
@@ -171,8 +170,8 @@ public class EscalatorRowColumnTest extends EscalatorBasicClientFeaturesTest {
         scrollVerticallyTo(2000); // more like 1857, but this should be enough.
 
         // if not found, an exception is thrown here
-        assertTrue("Wanted cell was not visible",
-                isElementPresent(By.xpath("//td[text()='Cell: 9,99']")));
+        waitUntil(driver -> isElementPresent(
+                By.xpath("//td[text()='Cell: 9,99']")));
     }
 
     @Test
